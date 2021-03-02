@@ -21,11 +21,11 @@ spring:
     open-in-view: false
     properties:
       hibernate:
-        hibernate.dialect: br.eti.deividferreira.legalpecas.infra.jpa.CustomPostgresDialect
+        hibernate.dialect: br.eti.deividferreira.catalogo.infra.jpa.CustomPostgresDialect
         jdbc.lob.non_contextual_creation: true
         jdbc.batch_size: 20
         connection.autocommit: false
-        implicit_naming_strategy: br.eti.deividferreira.legalpecas.infra.jpa.CustomNamingStrategy
+        implicit_naming_strategy: br.eti.deividferreira.catalogo.infra.jpa.CustomNamingStrategy
 
   flyway:
     enabled: true
