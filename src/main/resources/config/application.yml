@@ -1,0 +1,65 @@
+backend-legal-pecas:
+  oauth:
+    resource-id: backend-legal-pecas
+    web-client:
+      name: 'backend-legal-pecas-web'
+
+spring:
+  application.name: Legal Peças Backend
+  jmx.enabled: false
+
+  datasource:
+    hikari.pool-name: ${spring.application.name}_pool
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    hikari.maximum-pool-size: 10
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        hibernate.dialect: br.eti.deividferreira.legalpecas.infra.jpa.CustomPostgresDialect
+        jdbc.lob.non_contextual_creation: true
+        jdbc.batch_size: 20
+        connection.autocommit: false
+        implicit_naming_strategy: br.eti.deividferreira.legalpecas.infra.jpa.CustomNamingStrategy
+
+  flyway:
+    enabled: true
+    check-location: true
+    locations: classpath:db/migrations
+    sql-migration-prefix:
+    baseline-on-migrate: true
+    baseline-version: 0
+
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+server:
+  servlet:
+    session:
+      persistent: false
+
+logging:
+  file:
+    name: /${user.home}/${spring.application.name}/${spring.application.name}.log
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.springframework: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.context.support: INFO
+
+
+info:
+  name: ${spring.application.name}
+  description: 'Backend para Catálogo de Peças - Legal Peças'
+  version: ${project.version}
+  environment: ${active.profile}
