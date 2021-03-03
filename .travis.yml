@@ -8,6 +8,4 @@ branches:
   only:
     - develop
     - master  
-script:
-   - if [ "$TRAVIS_BRANCH" = "develop" ]; then mvn install -Pdevelop
-   - if [ "$TRAVIS_BRANCH" = "master" ]; then mvn install -Prelease
+script: mvn install -Pdevelop
