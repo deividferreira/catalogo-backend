@@ -3,3 +3,11 @@ jdk:
   - openjdk11
 before_install:
   - chmod +x mvnw
+
+branches:
+  only:
+    - develop
+    - master  
+script:
+   - if [ "$TRAVIS_BRANCH" = "develop" ]; then mvn install -Pdevelop
+   - if [ "$TRAVIS_BRANCH" = "master" ]; then mvn install -Prelease
