@@ -3,9 +3,9 @@ jdk:
   - openjdk11
 before_install:
   - chmod +x mvnw
-  - ./mvnw install -B -V -Pdevelop
 
 branches:
   only:
     - develop
     - master  
+script: mvn install -B -V -Pdevelop
