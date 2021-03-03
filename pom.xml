@@ -30,7 +30,6 @@
                 <active.profile>local</active.profile>
                 <finalName>${project.artifactId}-${project.version}-LOCAL</finalName>
                 <maven.test.skip>true</maven.test.skip>
-                <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
             </properties>
             <build>
 	            <finalName>${finalName}</finalName>
@@ -42,7 +41,6 @@
                 <active.profile>develop</active.profile>
                 <finalName>${project.artifactId}-${project.version}-DEV</finalName>
                 <maven.test.skip>true</maven.test.skip>
-                <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
             </properties>
             <build>
 	            <finalName>${finalName}</finalName>
@@ -54,7 +52,6 @@
                 <active.profile>release</active.profile>
                 <finalName>${project.artifactId}-${project.version}-RELEASE</finalName>
                 <maven.test.skip>false</maven.test.skip>
-                <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
             </properties>
             <build>
 	            <finalName>${finalName}</finalName>
