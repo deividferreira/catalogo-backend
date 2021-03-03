@@ -4,8 +4,17 @@ jdk:
 before_install:
   - chmod +x mvnw
 
-branches:
-  only:
-    - develop
-    - master  
-script: mvn install -Pdevelop
+jobs:
+  include:
+    #develop configurations
+    - stage: develop
+      script: mvn install -Pdevelop
+      branches:
+        only:
+          - develop
+    #production configurations
+    - stage: production
+      script: mvn install -Prelease
+      branches:
+        only:
+          - master
