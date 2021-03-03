@@ -10,12 +10,15 @@ jobs:
     - stage: develop
       script: mvn install -Pdevelop
       if: branch = develop
+    #production configurations
+    - stage: production
+      script: mvn install -Prelease
+      if: branch = master
+
+    - stage: deploy-dev
+      if: branch = develop
       deploy:
         provider: heroku
         api_key:
           secure: $API_KEY_HEROKU
         app: catalogo-pecas-dev
-    #production configurations
-    - stage: production
-      script: mvn install -Prelease
-      if: branch = master
