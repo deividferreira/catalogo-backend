@@ -15,6 +15,7 @@ jobs:
         api_key: $API_KEY_HEROKU
         app: 
           develop: catalogo-pecas-dev
+        run: "mvn compile -Pdevelop"
     #production configurations
     - stage: production
       script: mvn install -Prelease
