@@ -37,7 +37,7 @@
             <properties>
                 <active.profile>develop</active.profile>
                 <final-name>${project.artifactId}-${project.version}-DEV</final-name>
-                <maven.test.skip>false</maven.test.skip>
+                <maven.test.skip>true</maven.test.skip>
             </properties>
         </profile>
         <profile>
