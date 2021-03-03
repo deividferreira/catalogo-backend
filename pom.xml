@@ -28,25 +28,34 @@
             </activation>
             <properties>
                 <active.profile>local</active.profile>
-                <final-name>${project.artifactId}-${project.version}-LOCAL</final-name>
+                <finalName>${project.artifactId}-${project.version}-LOCAL</finalName>
                 <maven.test.skip>true</maven.test.skip>
             </properties>
+            <build>
+	            <finalName>${finalName}</finalName>
+	        </build>
         </profile>
         <profile>
             <id>develop</id>
             <properties>
                 <active.profile>develop</active.profile>
-                <final-name>${project.artifactId}-${project.version}-DEV</final-name>
+                <finalName>${project.artifactId}-${project.version}-DEV</finalName>
                 <maven.test.skip>true</maven.test.skip>
             </properties>
+            <build>
+	            <finalName>${finalName}</finalName>
+	        </build>
         </profile>
         <profile>
             <id>release</id>
             <properties>
                 <active.profile>release</active.profile>
-                <final-name>${project.artifactId}-${project.version}-RELEASE</final-name>
+                <finalName>${project.artifactId}-${project.version}-RELEASE</finalName>
                 <maven.test.skip>false</maven.test.skip>
             </properties>
+            <build>
+	            <finalName>${finalName}</finalName>
+	        </build>
         </profile>
     </profiles>
 	
