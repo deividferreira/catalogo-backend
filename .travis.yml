@@ -1,20 +1,16 @@
 language: java
 jdk:
   - openjdk11
-before_install:
-  - chmod +x mvnw
+os:
+  - windows
 
 jobs:
   include:
     #develop configurations
     - stage: develop
       script: mvn install -Pdevelop
-      branches:
-        only:
-          - develop
+      if: branch = develop
     #production configurations
     - stage: production
       script: mvn install -Prelease
-      branches:
-        only:
-          - master
+      if: branch = master
