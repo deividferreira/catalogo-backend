@@ -12,8 +12,7 @@ jobs:
       if: branch = develop
       deploy:
         provider: heroku
-        api_key:
-          secure: $API_KEY_HEROKU
+        api_key: $API_KEY_HEROKU
         app: 
           develop: catalogo-pecas-dev
     #production configurations
