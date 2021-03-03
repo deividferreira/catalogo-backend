@@ -11,9 +11,9 @@
 	</parent>
 	
 	<groupId>br.eti.deividferreira</groupId>
-	<artifactId>legalpecas-backend</artifactId>
+	<artifactId>catalogo-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>legalpecas-backend</name>
+	<name>catalogo-backend</name>
 	<description>Catálogo de Peças</description>
 	
 	<properties>
