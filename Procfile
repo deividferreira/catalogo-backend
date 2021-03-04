@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Dbackend-legal-pecas.oauth.web-client.secret=$WEB_CLIENT_SECRET -Dserver.port=$PORT -jar target/*.jar
+web: java $JAVA_OPTS -Dbackend-legal-pecas.oauth.web-client.secret=$WEB_CLIENT_SECRET -Dspring.profiles.active=$PROFILE -Dserver.port=$PORT -jar target/*.jar

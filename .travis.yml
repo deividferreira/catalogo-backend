@@ -11,7 +11,7 @@ jobs:
       script: ./mvnw install -Pdevelop
       if: branch = develop
       deploy:
-        provider: heroku:git
+        provider: heroku
         api_key: $API_KEY_HEROKU
         edge: true
         app: 
