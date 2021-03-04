@@ -8,14 +8,16 @@ jobs:
   include:
     #develop configurations
     - stage: develop
-      script: mvn install -Pdevelop
+      script: mvnw install -Pdevelop
       if: branch = develop
       deploy:
-        provider: heroku
+        provider: heroku:git
         api_key: $API_KEY_HEROKU
+        edge: true
         app: 
           develop: catalogo-pecas-dev
-        run: "mvn compile -Pdevelop"
+        on:
+          branch: develop
     #production configurations
     - stage: production
       script: mvn install -Prelease
