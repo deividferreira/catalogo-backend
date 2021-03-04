@@ -8,7 +8,7 @@ jobs:
   include:
     #develop configurations
     - stage: develop
-      script: mvnw install -Pdevelop
+      script: ./mvnw install -Pdevelop
       if: branch = develop
       deploy:
         provider: heroku:git
