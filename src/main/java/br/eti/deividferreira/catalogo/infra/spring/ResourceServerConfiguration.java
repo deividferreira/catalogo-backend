@@ -37,6 +37,8 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                             .hasAnyAuthority(Authorities.ADMINISTRATOR)
                         .antMatchers("/api/**")
                             .authenticated()
+                        .antMatchers("/public/**")
+                        	.anonymous()
                 .and()
                     .exceptionHandling()
                         .accessDeniedHandler(new OAuth2AccessDeniedHandler())
